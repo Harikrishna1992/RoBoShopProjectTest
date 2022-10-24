@@ -1,0 +1,1 @@
+Today i am going to pratice on shell scripting examples

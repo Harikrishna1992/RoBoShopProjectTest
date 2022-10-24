@@ -2,7 +2,7 @@
 
 echo "Hello World"
 
-Echo -e "/e[32m hello world /e[0m"
+echo -e "/e[32m hello world /e[0m"
 
-Echo -n "Hello World :"
+echo -n "Hello World :"
 $!

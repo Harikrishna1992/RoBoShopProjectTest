@@ -17,8 +17,7 @@ unset Test
 echo "$Test"
 
 #$0 File name of script
-For arg in $*;
-do
+for arg in $*;do
 echo "print $arg"
 
 done

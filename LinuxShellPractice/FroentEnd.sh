@@ -19,31 +19,31 @@ yum install $FRONTENDSERVICE -y &>> $LOG
 
 #if [$? -eq 0];then
 if [ $? -eq 0 ]; then
-echo "\e[32m Installation of $FRONTENDSERVICE is Sucess\e[0m"
+echo  -e "\e[32m Installation of $FRONTENDSERVICE is Sucess\e[0m"
 else
-echo "\e[31m installation of $FRONTENDSERVICE is failure\e[0m"
+echo -e "\e[31m installation of $FRONTENDSERVICE is failure\e[0m"
 fi
 
 echo  "Downloading the front end content"
-curl -s -L -o /tmp/$Component.zip "https://github.com/stans-robot-project/frontend/archive/main.zip" &>> $log
-$?
-if[$? -eq 0] ; then
-echo "\e[33m $FrontEndService is Sucess\e[0m"
+curl -s -L -o /tmp/$Component.zip "https://github.com/stans-robot-project/frontend/archive/main.zip" &>> $LOG
+
+if [$? -eq 0] ; then
+echo -e "\e[33m $FrontEndService is Sucess\e[0m"
 else
-echo "\e[31m $FrontEndService is failure\e[0m"
+echo -e  "\e[31m $FrontEndService is failure\e[0m"
 fi
 
 
 
 CheckTheStatus()
 {
-    if[$1 -eq 0] ; then
-    echo "\e[33m $FrontEndService is Sucess\e[0m"
+    if [$1 -eq 0] ; then
+    echo -e "\e[33m $FrontEndService is Sucess\e[0m"
     else
-    echo "\e[31m $FrontEndService is failure\e[0m"
+    echo -e "\e[31m $FrontEndService is failure\e[0m"
     fi
 }
-echo -n "remove the content of nginx before deploy the nginx "
+echo -n "remove the content of nginx before deploy the nginx : "
 rm -rf "/usr/share/nginx/html/*" &>> $LOG
  CheckTheStatus $?
 
@@ -60,12 +60,12 @@ mv localhost.conf /etc/nginx/default.d/roboshop.conf &>> $LOG
 
 echo -n "$FrontEndService is enabled"
 systemctl enable $FrontEndService &>> $LOG
-$?
-if[$? -eq 0] ; then
-echo "\e[32m $FrontEndService is Sucess\e[0m"
+CheckTheStatus $?
+if [$? -eq 0] ; then
+echo -e "\e[32m $FrontEndService is Sucess\e[0m"
 else
-echo "\e[31m $FrontEndService is failure\e[0m"
+echo -e "\e[31m $FrontEndService is failure\e[0m"
 fi
 echo -n "$FrontEndService is restarted"
-Systemctl restart $FrontEndService &>> $log
-$?
+Systemctl restart $FrontEndService &>> $LOG
+CheckTheStatus $?

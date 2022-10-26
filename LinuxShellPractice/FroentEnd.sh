@@ -10,17 +10,17 @@ if [ $USERID -ne 0 ]  ; then
     exit 1
 fi 
 component=FrontEnd
-Log = /tmp/$Component.log
+Log = /tmp/$component.log
 
 #Installing  the nginx
 frontendservice=nginx
-echo -n "Stated the installation of $FrontEndService"
-yum install $FrontEndService -y &>> $log
+echo -n "Stated the installation of $frontendservice"
+yum install $frontendservice -y &>> $log
 $?
 if[$? -eq 0] ; then
-echo "\e[32m Installation of $FrontEndService is Sucess\e[0m"
+echo "\e[32m Installation of $frontendservice is Sucess\e[0m"
 else
-echo "\e[31m installation of $FrontEndService is failure\e[0m"
+echo "\e[31m installation of $frontendservice is failure\e[0m"
 fi
 
 echo -n "Downloading the front end content"

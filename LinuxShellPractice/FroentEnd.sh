@@ -2,7 +2,7 @@
 
 set -e
 
-User = $(id -u)
+User = $((id -u))
 #Username Validation ; Check user is root or not
 if[$User -ne 0];then
 echo -e "\e[31m user must be a root user or having sudo previlages\e[0m"

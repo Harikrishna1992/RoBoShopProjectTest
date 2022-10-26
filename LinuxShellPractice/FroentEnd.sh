@@ -16,7 +16,7 @@ LOG=/tmp/$COMPONENT.log
 FRONTENDSERVICE=nginx
 echo "Stated the installation of $FRONTENDSERVICE"
 yum install $FRONTENDSERVICE -y &>> $LOG
-$?
+
 if[$? -eq 0] ; then
 echo "\e[32m Installation of $FRONTENDSERVICE is Sucess\e[0m"
 else

@@ -1,6 +1,14 @@
 #!/bin/bash
 
 set -e
+CheckTheStatus()
+{
+    if [ $1 -eq 0 ] ; then
+    echo -e "\e[33m Sucess\e[0m"
+    else
+    echo -e "\e[31m failure\e[0m"
+    fi
+}
 
 USERID=$(id -u) 
 
@@ -33,14 +41,7 @@ else
 echo -e "\e[31m $COMPONENT extracted is failure\e[0m"
 fi
 
-CheckTheStatus()
-{
-    if [ $1 -eq 0 ] ; then
-    echo -e "\e[33m Sucess\e[0m"
-    else
-    echo -e "\e[31m failure\e[0m"
-    fi
-}
+
 echo -n "remove the content of nginx before deploy the nginx : "
 rm -rf "/usr/share/nginx/html/*" &>> $LOG
  CheckTheStatus $?

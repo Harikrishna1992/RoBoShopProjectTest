@@ -21,22 +21,6 @@ echo "\e[32m Installation of $FrontEndService is Sucess\e[0m"
 else
 echo "\e[31m installation of $FrontEndService is failure\e[0m"
 fi
-echo -n "$FrontEndService is enabled"
-systemctl enable $FrontEndService &>> $log
-$?
-if[$? -eq 0] ; then
-echo "\e[32m $FrontEndService is Sucess\e[0m"
-else
-echo "\e[31m $FrontEndService is failure\e[0m"
-fi
-echo -n "$FrontEndService is Started"
-Systemctl start $FrontEndService &>> $log
-$?
-if[$? -eq 0] ; then
-echo "\e[33m $FrontEndService is Sucess\e[0m"
-else
-echo "\e[31m $FrontEndService is failure\e[0m"
-fi
 
 echo -n "Downloading the front end content"
 curl -s -L -o /tmp/$Component.zip "https://github.com/stans-robot-project/frontend/archive/main.zip" &>> $log
@@ -72,8 +56,14 @@ mv static/* . &>> $log
 rm -rf frontend-main README.md &>> $log
 mv localhost.conf /etc/nginx/default.d/roboshop.conf &>> $log
 
-if[];then
+echo -n "$FrontEndService is enabled"
+systemctl enable $FrontEndService &>> $log
+$?
+if[$? -eq 0] ; then
+echo "\e[32m $FrontEndService is Sucess\e[0m"
+else
+echo "\e[31m $FrontEndService is failure\e[0m"
 fi
-
-
-
+echo -n "$FrontEndService is restarted"
+Systemctl restart $FrontEndService &>> $log
+$?

@@ -51,11 +51,11 @@ echo -n "remove the content of nginx before deploy the nginx : "
 rm -rf "/usr/share/nginx/html/*" &>> $LOG
 CheckTheStatus $?
 
-#cd /usr/share/nginx/html 
+cd /usr/share/nginx/html 
 echo -n "unziping the $COMPONENT content into /tmp/$COMPONENT.zip : "
 unzip -o /tmp/$COMPONENT.zip &>> $LOG
 CheckTheStatus $?
-mv /tmp/$COMPONENT-main/* .
+mv /$COMPONENT-main/* .
 mv static/* . &>> $LOG
 rm -rf frontend-main README.md &>> $LOG
 mv localhost.conf /etc/nginx/default.d/roboshop.conf &>> $LOG

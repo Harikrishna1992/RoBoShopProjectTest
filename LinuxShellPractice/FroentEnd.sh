@@ -47,10 +47,9 @@ rm -rf "/usr/share/nginx/html/*" &>> $LOG
 CheckTheStatus $?
 
 echo -n "unziping the $COMPONENT content into /tmp/$COMPONENT.zip : "
-
-unzip /tmp/$COMPONENT.zip -o -q &>> $LOG
-
+unzip -o /tmp/$COMPONENT.zip &>> $LOG
 CheckTheStatus $?
+
 cd /usr/share/nginx/html &>> $LOG
 mv /tmp/$COMPONENT-main/* .&>> $LOG
 mv static/* . &>> $LOG

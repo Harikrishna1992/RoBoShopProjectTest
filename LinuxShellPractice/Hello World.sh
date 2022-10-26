@@ -22,14 +22,16 @@ echo "print $arg"
 
 done
 
-echo $*   # Gives you all the arguments used in the script
-echo $@   # Gives you all the arguments used in the script
-echo $#   # Gves you the number of arguments users
-echo $$   # Gives you the PID of the current process
-echo $?   # Gives you the exit code the previous command
-echo -e "Hi, please type the word: \c "
-read  word
+TODAY_DATE="$(date +%F)"
+NO_OF_USERS="$(who | wc -l)"
+
+Today_Date = "$(date) + %F)"
+
+
 echo "The word you entered is: $word" 
 
-
-echo $name
+VarE = $((3+9))
+echo $VarE
+touch /tmp/testfile.txt 
+var=`df -h | grep tmpfs`
+echo $var

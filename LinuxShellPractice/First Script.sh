@@ -1,8 +1,8 @@
 #! /bin/sh
 
-Echo -e "\e[31mThis ia my first script\e[m"
+echo -e "\e[31mThis ia my first script\e[m"
 
-Echo -n ""
+echo -n ""
 
 A = 10
 B= 20

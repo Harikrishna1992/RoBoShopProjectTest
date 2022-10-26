@@ -9,18 +9,18 @@ if [ $USERID -ne 0 ]  ; then
     echo -e "\e[31m You must run this script as a root user or with sudo privilege \e[0m"
     exit 1
 fi 
-component=FrontEnd
-Log = /tmp/$component.log
+COMPONENT=frontend
+Log = /tmp/$COMPONENT.log
 
 #Installing  the nginx
-frontendservice=nginx
-echo -n "Stated the installation of $frontendservice"
-yum install $frontendservice -y &>> $log
+FRONTENDSERVICE=nginx
+echo -n "Stated the installation of $FRONTENDSERVICE"
+yum install $FRONTENDSERVICE -y &>> $log
 $?
 if[$? -eq 0] ; then
-echo "\e[32m Installation of $frontendservice is Sucess\e[0m"
+echo "\e[32m Installation of $FRONTENDSERVICE is Sucess\e[0m"
 else
-echo "\e[31m installation of $frontendservice is failure\e[0m"
+echo "\e[31m installation of $FRONTENDSERVICE is failure\e[0m"
 fi
 
 echo -n "Downloading the front end content"

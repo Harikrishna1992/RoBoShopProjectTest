@@ -10,7 +10,7 @@ if [ $USERID -ne 0 ]  ; then
     exit 1
 fi 
 COMPONENT=frontend
-Log = /tmp/$COMPONENT.log
+LOG=/tmp/$COMPONENT.log
 
 #Installing  the nginx
 FRONTENDSERVICE=nginx

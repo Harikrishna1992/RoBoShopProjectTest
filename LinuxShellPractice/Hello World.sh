@@ -1,4 +1,5 @@
-#!/bin/sh
+#! /bin/sh
+#! /bin/bash
 
 echo "Hello World"
 

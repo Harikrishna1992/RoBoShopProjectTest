@@ -9,11 +9,11 @@ if [ $USERID -ne 0 ]  ; then
     echo -e "\e[31m You must run this script as a root user or with sudo privilege \e[0m"
     exit 1
 fi 
-component = FrontEnd
+component=FrontEnd
 Log = /tmp/$Component.log
 
 #Installing  the nginx
-frontendservice = nginx
+frontendservice=nginx
 echo -n "Stated the installation of $FrontEndService"
 yum install $FrontEndService -y &>> $log
 $?

@@ -14,7 +14,7 @@ LOG=/tmp/$COMPONENT.log
 
 #Installing  the nginx
 FRONTENDSERVICE=nginx
-echo -n "Stated the installation of $FRONTENDSERVICE"
+echo "Stated the installation of $FRONTENDSERVICE"
 yum install $FRONTENDSERVICE -y &>> $LOG
 $?
 if[$? -eq 0] ; then
@@ -23,7 +23,7 @@ else
 echo "\e[31m installation of $FRONTENDSERVICE is failure\e[0m"
 fi
 
-echo -n "Downloading the front end content"
+echo  "Downloading the front end content"
 curl -s -L -o /tmp/$Component.zip "https://github.com/stans-robot-project/frontend/archive/main.zip" &>> $log
 $?
 if[$? -eq 0] ; then

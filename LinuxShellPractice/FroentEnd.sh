@@ -44,7 +44,7 @@ fi
 
 echo -n "remove the content of nginx before deploy the nginx : "
 rm -rf "/usr/share/nginx/html/*" &>> $LOG
- CheckTheStatus $?
+CheckTheStatus $?
 
 echo -n "unziping the $COMPONENT content into /tmp/$COMPONENT.zip : "
 
@@ -62,5 +62,5 @@ systemctl enable $FRONTENDSERVICE &>> $LOG
 CheckTheStatus $?
 
 echo -n "$FRONTENDSERVICE is started : "
-Systemctl start $FRONTENDSERVICE &>> $LOG
+systemctl start $FRONTENDSERVICE &>> $LOG
 CheckTheStatus $?

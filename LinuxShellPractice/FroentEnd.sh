@@ -15,7 +15,7 @@ LOG=/tmp/$COMPONENT.log
 #Installing  the nginx
 FRONTENDSERVICE=nginx
 echo -n "Stated the installation of $FRONTENDSERVICE"
-yum install $FRONTENDSERVICE -y &>> $log
+yum install $FRONTENDSERVICE -y &>> $LOG
 $?
 if[$? -eq 0] ; then
 echo "\e[32m Installation of $FRONTENDSERVICE is Sucess\e[0m"
@@ -43,22 +43,22 @@ CheckTheStatus()
     fi
 }
 echo -n "remove the content of nginx before deploy the nginx "
-rm -rf "/usr/share/nginx/html/*" &>> $log
+rm -rf "/usr/share/nginx/html/*" &>> $LOG
  CheckTheStatus $?
 
 echo -n "unziping the $Component content into /tmp/$Component.zip"
 
-unzip /tmp/$Component.zip -o -q &>> $log
+unzip /tmp/$Component.zip -o -q &>> $LOG
 
 CheckTheStatus $?
-cd /usr/share/nginx/html &>> $log
-mv /tmp/$Component-main/* .&>> $log
-mv static/* . &>> $log
-rm -rf frontend-main README.md &>> $log
-mv localhost.conf /etc/nginx/default.d/roboshop.conf &>> $log
+cd /usr/share/nginx/html &>> $LOG
+mv /tmp/$Component-main/* .&>> $LOG
+mv static/* . &>> $LOG
+rm -rf frontend-main README.md &>> $LOG
+mv localhost.conf /etc/nginx/default.d/roboshop.conf &>> $LOG
 
 echo -n "$FrontEndService is enabled"
-systemctl enable $FrontEndService &>> $log
+systemctl enable $FrontEndService &>> $LOG
 $?
 if[$? -eq 0] ; then
 echo "\e[32m $FrontEndService is Sucess\e[0m"

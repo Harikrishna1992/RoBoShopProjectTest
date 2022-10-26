@@ -34,7 +34,7 @@ fi
 
 #Remove zip file if exists
 if [ -f /tmp/$COMPONENT.zip ] ; then
-echo -n "removing $COMPONENT.zip if exit"
+echo "removing $COMPONENT.zip if exit"
 fi
 rm -rf /tmp/$COMPONENT.zip 
 echo  "Downloading the front end content"
@@ -55,8 +55,6 @@ cd /usr/share/nginx/html
 echo -n "unziping the $COMPONENT content into /tmp/$COMPONENT.zip : "
 unzip /tmp/$COMPONENT.zip &>> $LOG
 CheckTheStatus $?
-
-
 mv /tmp/$COMPONENT-main/* .
 mv static/* . &>> $LOG
 rm -rf frontend-main README.md &>> $LOG

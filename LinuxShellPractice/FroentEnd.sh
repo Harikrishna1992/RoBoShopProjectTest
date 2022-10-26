@@ -17,7 +17,7 @@ FRONTENDSERVICE=nginx
 echo "Stated the installation of $FRONTENDSERVICE"
 yum install $FRONTENDSERVICE -y &>> $LOG
 
-if[$? -eq 0] ; then
+if[$? -eq 0];then
 echo "\e[32m Installation of $FRONTENDSERVICE is Sucess\e[0m"
 else
 echo "\e[31m installation of $FRONTENDSERVICE is failure\e[0m"

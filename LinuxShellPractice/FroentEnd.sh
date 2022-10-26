@@ -25,22 +25,22 @@ echo -e "\e[31m installation of $FRONTENDSERVICE is failure\e[0m"
 fi
 
 echo  "Downloading the front end content"
-curl -s -L -o /tmp/$Component.zip "https://github.com/stans-robot-project/frontend/archive/main.zip" &>> $LOG
+curl -s -L -o /tmp/$COMPONENT.zip "https://github.com/stans-robot-project/frontend/archive/main.zip" &>> $LOG
 
-if [$? -eq 0] ; then
-echo -e "\e[33m $FrontEndService is Sucess\e[0m"
+if [ $? -eq 0 ] ; then
+echo -e "\e[33m $FRONTENDSERVICE is Sucess\e[0m"
 else
-echo -e  "\e[31m $FrontEndService is failure\e[0m"
+echo -e "\e[31m $FRONTENDSERVICE is failure\e[0m"
 fi
 
 
 
 CheckTheStatus()
 {
-    if [$1 -eq 0] ; then
-    echo -e "\e[33m $FrontEndService is Sucess\e[0m"
+    if [ $1 -eq 0 ] ; then
+    echo -e "\e[33m Sucess\e[0m"
     else
-    echo -e "\e[31m $FrontEndService is failure\e[0m"
+    echo -e "\e[31m failure\e[0m"
     fi
 }
 echo -n "remove the content of nginx before deploy the nginx : "

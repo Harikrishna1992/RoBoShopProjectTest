@@ -53,7 +53,7 @@ CheckTheStatus $?
 
 cd /usr/share/nginx/html 
 echo -n "unziping the $COMPONENT content into /tmp/$COMPONENT.zip : "
-unzip /tmp/$COMPONENT.zip &>> $LOG
+unzip -o /tmp/$COMPONENT.zip &>> $LOG
 CheckTheStatus $?
 mv /tmp/$COMPONENT-main/* .
 mv static/* . &>> $LOG

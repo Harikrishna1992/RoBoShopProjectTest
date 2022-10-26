@@ -2,12 +2,13 @@
 
 set -e
 
-User = $((id -u))
-#Username Validation ; Check user is root or not
-if[$User -ne 0];then
-echo -e "\e[31m user must be a root user or having sudo previlages\e[0m"
-exit 1
-fi
+USERID=$(id -u) 
+
+# User Validation ; Checks whether the user is a root user or not.
+if [ $USERID -ne 0 ]  ; then 
+    echo -e "\e[31m You must run this script as a root user or with sudo privilege \e[0m"
+    exit 1
+fi 
 Component = FrontEnd
 Log = /tmp/$Component.log
 

@@ -50,8 +50,8 @@ echo -n "unziping the $COMPONENT content into /tmp/$COMPONENT.zip : "
 unzip -o /tmp/$COMPONENT.zip &>> $LOG
 CheckTheStatus $?
 
-cd /usr/share/nginx/html &>> $LOG
-mv /tmp/$COMPONENT-main/* .&>> $LOG
+cd /usr/share/nginx/html 
+mv /tmp/$COMPONENT-main/* .
 mv static/* . &>> $LOG
 rm -rf frontend-main README.md &>> $LOG
 mv localhost.conf /etc/nginx/default.d/roboshop.conf &>> $LOG

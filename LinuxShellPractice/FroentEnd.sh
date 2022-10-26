@@ -32,6 +32,11 @@ else
 echo -e "\e[31m installation of $FRONTENDSERVICE is failure\e[0m"
 fi
 
+#Remove zip file if exists
+if [ -f /tmp/$COMPONENT.zip ] ; then
+echo -n "removing $COMPONENT.zip if exit"
+fi
+rm -rf /tmp/$COMPONENT.zip 
 echo  "Downloading the front end content"
 curl -s -L -o /tmp/$COMPONENT.zip "https://github.com/stans-robot-project/frontend/archive/main.zip" &>> $LOG
 
@@ -47,7 +52,6 @@ rm -rf "/usr/share/nginx/html/*" &>> $LOG
 CheckTheStatus $?
 
 cd /usr/share/nginx/html 
-
 echo -n "unziping the $COMPONENT content into /tmp/$COMPONENT.zip : "
 unzip /tmp/$COMPONENT.zip &>> $LOG
 CheckTheStatus $?

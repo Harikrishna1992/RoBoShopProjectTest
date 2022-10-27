@@ -2,7 +2,7 @@
 
 set -e 
 
-COMPONENT = mangodb
+COMPONENT=mangodb
 
 source LinuxShellPractice/generic.sh
 

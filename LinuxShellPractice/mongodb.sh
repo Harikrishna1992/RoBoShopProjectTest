@@ -4,7 +4,7 @@ set -e
 
 COMPONENT=mangodb
 
-source Generic.sh
+source LinuxShellPractice/generic.sh
 
 echo -n "MangoDb setup repo : "
 curl -s -o /etc/yum.repos.d/$COMPONENT.repo https://raw.githubusercontent.com/stans-robot-project/$COMPONENT/main/mongo.repo &>> $LOG

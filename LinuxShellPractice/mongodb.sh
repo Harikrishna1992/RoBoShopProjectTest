@@ -1,6 +1,7 @@
 #!/bin/bash
 
 COMPONENT = mangodb
+
 source LinuxShellPractice/Generic.sh
 
 echo -n "MangoDb setup repo : "

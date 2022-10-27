@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e 
+
 COMPONENT = mangodb
 
 source LinuxShellPractice/Generic.sh

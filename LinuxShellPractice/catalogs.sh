@@ -3,6 +3,9 @@
 set -e
 APPUSER=roboshop
 COMPONENT=catalogue
+
+source LinuxShellPractice/generic.sh
+
 echo -n "Downloading the Node js service : "
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>> $LOG
 CheckTheStatus $?

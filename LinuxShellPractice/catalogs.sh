@@ -21,7 +21,7 @@ if [ $? -ne 0 ] ; then
     useradd $APPUSER &>> $LOG
     CheckTheStatus $?
 else
-  echo "user ${$APPUSER} is already exist"
+  echo "user $APPUSER is already exist"
 fi
 
 #remove the the content zip file if exist from Appuser location

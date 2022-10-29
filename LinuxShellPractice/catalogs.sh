@@ -1,7 +1,7 @@
 #!bin/bash
 
 set -e
-$APPUSER=roboshop
+APPUSER=roboshop
 COMPONENT=catalogue
 echo -n "Downloading the Node js service : "
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>> $LOG

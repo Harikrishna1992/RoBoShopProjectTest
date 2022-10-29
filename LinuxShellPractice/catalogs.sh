@@ -40,7 +40,7 @@ unzip -o /tmp/$COMPONENT.zip &>> $LOG
 CheckTheStatus $?
 
 #Move the data
-mv /$COMPONENT-main $COMPONENT &>> $LOG
+mv $COMPONENT-main $COMPONENT &>> $LOG
 cd /home/$APPUSER/$COMPONENT &>> $LOG
 npm install &>> $LOG
 

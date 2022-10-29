@@ -1,4 +1,4 @@
-froentend:
+froentEnd:
 	bash LinuxShellPractice/froentEnd.sh
 
 mongodb:

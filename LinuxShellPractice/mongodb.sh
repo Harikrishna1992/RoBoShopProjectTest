@@ -17,11 +17,11 @@ CheckTheStatus $?
 
 #Updating the lisener IP address for mangodb
 echo -n "Updating the mongodb config :"
-sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/$COMPONENT.conf
+sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf
 CheckTheStatus $?
 
 #Start the mangodb service
-ServiceStart $COMPONENT
+ServiceStart mongod
 
 echo -n "Downloading the $COMPONENT Schema:"
 curl -s -L -o /tmp/$COMPONENT.zip "https://github.com/stans-robot-project/mongodb/archive/main.zip" &>> $LOG

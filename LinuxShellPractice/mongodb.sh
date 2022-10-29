@@ -11,7 +11,8 @@ curl -s -o /etc/yum.repos.d/$COMPONENT.repo https://raw.githubusercontent.com/st
 CheckTheStatus $?
 
 #Installing the MangoDB component
-ComponentInstall mongodb-org
+ echo -n "Installing the $COMPONENT is : "
+ yum install -y mongodb-org &>> $LOG
  CheckTheStatus $? 
 
 #Updating the lisener IP address for mangodb

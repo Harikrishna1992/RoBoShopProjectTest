@@ -17,12 +17,6 @@ fi
 
 LOG=/tmp/$COMPONENT.log
 
-ComponentInstall()
-{
-    echo -n "Installing the $COMPONENT is : "
-    yum install -y $# &>> $LOG
-   
-}
 
 ServiceStart()
 {

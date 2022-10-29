@@ -17,14 +17,12 @@ ComponentInstall nodejs
 id $APPUSER &>> $LOG
 
 if [ $? -ne 0 ] ; then
-echo -n "Creating the $APPUSER user :"
-useradd $APPUSER &>> $LOG
-CheckTheStatus $?
+    echo -n "Creating the $APPUSER user :"
+    useradd $APPUSER &>> $LOG
+    CheckTheStatus $?
 else
-echo "user "${$APPUSER}" is already exit"
+  echo "user ${$APPUSER} is already exist"
 fi
-
-
 
 #remove the the content zip file if exist from Appuser location
 rm -rf /home/$APPUSER/tmp/$COMPONENT.zip &>> $LOG

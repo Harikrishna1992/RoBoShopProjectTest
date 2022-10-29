@@ -14,9 +14,17 @@ CheckTheStatus $?
 ComponentInstall nodejs
 
 #Create user
-echo -n "Creating the $APPUSER user"
+id $APPUSER &>> $LOG
+
+if [ $? -eq 0 ] ; then
+echo -n "Creating the $APPUSER user :"
 useradd $APPUSER &>> $LOG
 CheckTheStatus $?
+else
+echo "user "${$APPUSER}" is already exit"
+fi
+
+
 
 #remove the the content zip file if exist from Appuser location
 rm -rf /home/$APPUSER/tmp/$COMPONENT.zip &>> $LOG

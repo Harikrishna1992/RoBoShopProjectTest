@@ -31,7 +31,7 @@ cd /tmp
 unzip -o $COMPONENT.zip &>> $LOG
 mv $COMPONENT-main/* .  &>> $LOG
 cd $COMPONENT-main &>> $LOG
-mango < catalogue.js &>> $LOG
+mongo < catalogue.js &>> $LOG
 mongo < users.js &>> $LOG
 
 

@@ -30,9 +30,8 @@ CheckTheStatus $?
 cd /tmp
 unzip -o $COMPONENT.zip &>> $LOG
 mv $COMPONENT-main/* .  &>> $LOG
-cd $COMPONENT-main &>> $LOG
-mongo < catalogue.js &>> $LOG
-mongo < users.js &>> $LOG
+mongo < /tmp/catalogue.js &>> $LOG
+mongo < /tmp/users.js &>> $LOG
 
 
 

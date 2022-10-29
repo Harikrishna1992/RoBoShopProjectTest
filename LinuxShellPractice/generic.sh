@@ -24,8 +24,8 @@ ServiceStart()
     systemctl enable $1 &>> $LOG
     CheckTheStatus $?
 
-    echo -n "$# is started : "
-    systemctl start $# &>> $LOG
+    echo -n "$1 is started : "
+    systemctl start $1 &>> $LOG
     CheckTheStatus $?
 }
 

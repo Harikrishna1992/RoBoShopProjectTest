@@ -2,7 +2,7 @@
 
 set -e 
 
-COMPONENT=mangodb
+COMPONENT=mongodb
 
 source LinuxShellPractice/generic.sh
 
@@ -12,7 +12,7 @@ CheckTheStatus $?
 
 #Installing the MangoDB component
  echo -n "Installing the $COMPONENT is : "
- yum install -y mongodb-org &>> $LOG
+ yum install -y $COMPONENT-org &>> $LOG
  CheckTheStatus $? 
 
 #Updating the lisener IP address for mangodb
@@ -21,7 +21,7 @@ sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mangodb.conf
 CheckTheStatus $?
 
 #Start the mangodb service
-ServiceStart $component
+ServiceStart $COMPONENT
 
 echo -n "Downloading the $COMPONENT Schema:"
 curl -s -L -o /tmp/$COMPONENT.zip "https://github.com/stans-robot-project/mongodb/archive/main.zip" &>> $LOG

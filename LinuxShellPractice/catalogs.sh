@@ -16,7 +16,7 @@ ComponentInstall nodejs
 #Create user
 id $APPUSER &>> $LOG
 
-if [ $? -eq 0 ] ; then
+if [ $? -ne 0 ] ; then
 echo -n "Creating the $APPUSER user :"
 useradd $APPUSER &>> $LOG
 CheckTheStatus $?

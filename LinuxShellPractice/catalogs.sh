@@ -30,11 +30,11 @@ CheckTheStatus $?
 
 #unzip the contant
 echo -n "Unzipping the $COMPONENT.zip : "
-unzip -o $COMPONENT.zip &>> $LOG
+unzip -o /tmp/$COMPONENT.zip &>> $LOG
 CheckTheStatus $?
 
 #Move the data
-mv $COMPONENT-main $COMPONENT &>> $LOG
+mv /tmp/$COMPONENT-main $COMPONENT &>> $LOG
 cd /home/$APPUSER/$COMPONENT &>> $LOG
 npm install &>> $LOG
 

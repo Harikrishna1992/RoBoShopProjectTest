@@ -19,7 +19,7 @@ LOG=/tmp/$COMPONENT.log
 
 ComponentInstall()
 {
-    echo -n "Installing the $@ is : "
+    echo -n "Installing the $COMPONENT is : "
     yum install -y $@ &>> $LOG
     CheckTheStatus $? 
 }

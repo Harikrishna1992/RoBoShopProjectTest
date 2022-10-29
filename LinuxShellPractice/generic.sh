@@ -20,11 +20,11 @@ LOG=/tmp/$COMPONENT.log
 ComponentInstall()
 {
     echo -n "Installing the $COMPONENT is : "
-    yum install -y $@ &>> $LOG
+    yum install -y $1 &>> $LOG
     CheckTheStatus $? 
 }
 
-ServiceStart()
+ServiceStart(
 {
     echo -n "$# is enabled : "
     systemctl enable $# &>> $LOG

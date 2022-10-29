@@ -47,7 +47,7 @@ npm install &>> $LOG
 CheckTheStatus $?
 
 echo -n "Changing ownership to $APPUSER: "
-chown -R $APPUSER:$APPUSER /home/$APPUSER/$COMPONENT &&  chmod -R 775 /home/$APPUSER/$COMPONENT 
+chown -R $APPUSER:$APPUSER /home/$APPUSER/$COMPONENT && chmod -R 775 /home/$APPUSER/$COMPONENT
 CheckTheStatus $?
 
 

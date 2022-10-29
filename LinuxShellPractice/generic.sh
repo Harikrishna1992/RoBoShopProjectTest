@@ -20,8 +20,8 @@ LOG=/tmp/$COMPONENT.log
 
 ServiceStart()
 {
-    echo -n "$# is enabled : "
-    systemctl enable $# &>> $LOG
+    echo -n "$1 is enabled : "
+    systemctl enable $1 &>> $LOG
     CheckTheStatus $?
 
     echo -n "$# is started : "

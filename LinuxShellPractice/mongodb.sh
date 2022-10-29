@@ -17,7 +17,7 @@ CheckTheStatus $?
 
 #Updating the lisener IP address for mangodb
 echo -n "Updating the mongodb config :"
-sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mangodb.conf
+sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/$COMPONENT.conf
 CheckTheStatus $?
 
 #Start the mangodb service

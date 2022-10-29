@@ -12,6 +12,7 @@ CheckTheStatus $?
 
 #Installing the MangoDB component
 ComponentInstall mongodb-org
+ CheckTheStatus $? 
 
 #Updating the lisener IP address for mangodb
 echo -n "Updating the mongodb config :"

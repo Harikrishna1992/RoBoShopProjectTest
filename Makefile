@@ -3,3 +3,6 @@ froentend:
 
 mongodb:
 	bash LinuxShellPractice/mongodb.sh
+
+catalogs:
+	bash LinuxShellPractice/catalogs.sh

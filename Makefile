@@ -1,5 +1,5 @@
 froentend:
-	bash LinuxShellPractice/froentend.sh
+	bash LinuxShellPractice/FroentEnd.sh
 
 mongodb:
 	bash LinuxShellPractice/mongodb.sh

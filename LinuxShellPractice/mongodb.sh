@@ -6,11 +6,11 @@ COMPONENT=mongodb
 
 source LinuxShellPractice/generic.sh
 
-echo -n "MangoDb setup repo : "
+echo -n "mongodb setup repo : "
 curl -s -o /etc/yum.repos.d/${COMPONENT}.repo https://raw.githubusercontent.com/stans-robot-project/${COMPONENT}/main/mongo.repo 
 CheckTheStatus $?
 
-#Installing the MangoDB component
+#Installing the mongodb component
  echo -n "Installing the $COMPONENT is : "
  yum install -y $COMPONENT-org &>> $LOG
  CheckTheStatus $? 

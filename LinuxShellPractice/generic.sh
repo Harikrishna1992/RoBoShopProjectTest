@@ -24,7 +24,7 @@ ComponentInstall()
     CheckTheStatus $? 
 }
 
-ServiceStart(
+ServiceStart()
 {
     echo -n "$# is enabled : "
     systemctl enable $# &>> $LOG

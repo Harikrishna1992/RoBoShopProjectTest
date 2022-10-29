@@ -42,12 +42,12 @@ CheckTheStatus $?
 #Move the data
 mv $COMPONENT-main $COMPONENT &>> $LOG
 cd /home/$APPUSER/$COMPONENT &>> $LOG
+echo -n "Npm Installation : "
 npm install &>> $LOG
+CheckTheStatus $?
 
-#if [-f systemd.servce];then
-#sed -i -e '/s'
-#fi
-
+echo -n "Changing ownership to $APPUSER"
+chown -R $APPUSER:$APPUSER /home/$APPUSER/$COMPONENT
 
 
 

@@ -52,7 +52,7 @@ chmod -R 775 /home/$APPUSER/$COMPONENT
 CheckTheStatus $?
 
 echo -n "configuring the systemD file with MongoDB server IP : "
-sed -i -e 's/MONGO_DNSNAME/172.31.86.195/'
+sed -i -e 's/MONGO_DNSNAME/172.31.86.195/' /home/$APPUSER/$COMPONENT/systemd.service
 CheckTheStatus $?
 
 

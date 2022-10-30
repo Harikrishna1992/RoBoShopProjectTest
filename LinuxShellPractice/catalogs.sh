@@ -48,6 +48,8 @@ CheckTheStatus $?
 
 echo -n "Changing ownership to $APPUSER: "
 chown -R $APPUSER:$APPUSER /home/$APPUSER/$COMPONENT
+CheckTheStatus $?
+echo -n "Adding execute permission to folder /home/$APPUSER/$COMPONENT : "
 chmod -R 775 /home/$APPUSER/$COMPONENT
 CheckTheStatus $?
 
@@ -59,7 +61,6 @@ echo -n "Moving mongoDB service file to default System file location : "
 mv /home/$APPUSER/$COMPONENT/systemd.service /etc/systemd/system/$COMPONENT.service &>> $LOG
 CheckTheStatus $?
 
-systemctl daemon-reload &>> $LOG
 
 ServiceStart catalogue
 # mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service

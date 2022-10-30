@@ -24,8 +24,22 @@ ComponentInstall()
     CheckTheStatus $? 
 }
 
+UserCreation()
+{
+#Create user
+id $APPUSER &>> $LOG
+
+if [ $? -ne 0 ] ; then
+    echo -n "Creating the $APPUSER user :"
+    useradd $APPUSER &>> $LOG
+    CheckTheStatus $?
+else
+  echo "user $APPUSER is already exist"
+fi
+}
 ServiceStart()
 {
+    systemctl daemon-reload &>> $LOG
     echo -n "$1 is enabled : "
     systemctl enable $1 &>> $LOG
     CheckTheStatus $?
@@ -35,3 +49,28 @@ ServiceStart()
     CheckTheStatus $?
 }
 
+AppContantRemove()
+{
+#remove the the content zip file if exist from Appuser location
+echo "removing application content before extracting if exits [/home/$APPUSER/tmp/$COMPONENT.zip] "
+rm -rf /home/$APPUSER/tmp/$COMPONENT.zip &>> $LOG
+echo "removing application content folder if exits [/home/$APPUSER/tmp/$COMPONENT]"
+rm -rf /home/$APPUSER/$COMPONENT &>> $LOG
+}
+unzipContent()
+{
+    #unzip the contant
+echo -n "Unzipping the $COMPONENT.zip : "
+unzip -o /tmp/$COMPONENT.zip &>> $LOG
+CheckTheStatus $?
+
+}
+
+ApplyOwnerShipAndExecutePermission (){
+echo -n "Changing ownership to $APPUSER: "
+chown -R $APPUSER:$APPUSER /home/$APPUSER/$COMPONENT
+CheckTheStatus $?
+echo -n "Adding execute permission to folder /home/$APPUSER/$COMPONENT : "
+chmod -R 775 /home/$APPUSER/$COMPONENT
+CheckTheStatus $?
+}

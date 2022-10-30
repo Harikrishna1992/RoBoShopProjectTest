@@ -6,3 +6,9 @@ mongodb:
 
 catalogs:
 	bash LinuxShellPractice/catalogs.sh
+
+user:
+	bash LinuxShellPractice/user.sh
+
+redis:
+	bash LinuxShellPractice/redis.sh

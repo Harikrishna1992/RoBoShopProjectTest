@@ -51,9 +51,9 @@ chown -R $APPUSER:$APPUSER /home/$APPUSER/$COMPONENT
 chmod -R 775 /home/$APPUSER/$COMPONENT
 CheckTheStatus $?
 
-
-
-
+echo -n "configuring the systemD file with MongoDB server IP : "
+sed -i -e 's/MONGO_DNSNAME/172.31.86.195/'
+CheckTheStatus $?
 
 
 

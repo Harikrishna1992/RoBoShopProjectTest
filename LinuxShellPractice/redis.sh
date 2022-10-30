@@ -24,3 +24,5 @@ fi
 CheckTheStatus $?
 
 ServiceStart redis
+
+systemctl restart nginx

@@ -1,6 +1,6 @@
 #!bin/bash
 set -e
-source /LinuxShellPractice/generic.sh
+source LinuxShellPractice/generic.sh
 COMPONENT=user
 APPUSER=roboshop
 echo -n "Downloading the Node js service : "

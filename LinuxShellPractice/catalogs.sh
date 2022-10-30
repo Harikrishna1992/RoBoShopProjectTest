@@ -52,9 +52,20 @@ chmod -R 775 /home/$APPUSER/$COMPONENT
 CheckTheStatus $?
 
 echo -n "configuring the systemD file with MongoDB server IP : "
-sed -i -e 's/MONGO_DNSNAME/172.31.86.195/' /home/$APPUSER/$COMPONENT/systemd.service
+sed -i -e 's/MONGO_DNSNAME/172.31.86.195/' /home/$APPUSER/$COMPONENT/systemd.service &>> $LOG
 CheckTheStatus $?
 
+echo -n "Moving mongoDB service file to default System file location : "
+mv /home/$APPUSER/$COMPONENT/systemd.service /etc/systemd/system/$COMPONENT.service &>> $LOG
+CheckTheStatus $?
+
+systemctl daemon-reload &>> $LOG
+
+ServiceStart catalogue
+# mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
+# systemctl daemon-reload
+# systemctl start catalogue
+# systemctl enable catalogue
 
 
 

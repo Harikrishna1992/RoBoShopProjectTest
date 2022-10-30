@@ -26,7 +26,7 @@ fi
 
 #remove the the content zip file if exist from Appuser location
 rm -rf /home/$APPUSER/tmp/$COMPONENT.zip &>> $LOG
-
+rm -rf /home/$APPUSER/tmp/$COMPONENT &>> $LOG
 cd /home/$APPUSER &>> $LOG
 
 #Download the content
@@ -40,14 +40,15 @@ unzip -o /tmp/$COMPONENT.zip &>> $LOG
 CheckTheStatus $?
 
 #Move the data
-mv $COMPONENT-main $COMPONENT &>> $LOG
+mv -f $COMPONENT-main $COMPONENT &>> $LOG
 cd /home/$APPUSER/$COMPONENT &>> $LOG
 echo -n "Npm Installation : "
 npm install &>> $LOG
 CheckTheStatus $?
 
 echo -n "Changing ownership to $APPUSER: "
-chown -R $APPUSER:$APPUSER /home/$APPUSER/$COMPONENT && chmod -R 775 /home/$APPUSER/$COMPONENT
+chown -R $APPUSER:$APPUSER /home/$APPUSER/$COMPONENT
+chmod -R 775 /home/$APPUSER/$COMPONENT
 CheckTheStatus $?
 
 

@@ -34,7 +34,7 @@ CheckTheStatus $?
 ApplyOwnerShipAndExecutePermission
 
 echo -n "configuring the systemD file with MongoDB server IP : "
-sed -i -e 's/MONGO_DNSNAME/172.31.86.195/' /home/$APPUSER/$COMPONENT/systemd.service &>> $LOG
+sed -i -e 's/MONGO_ENDPOINT/172.31.86.195/' /home/$APPUSER/$COMPONENT/systemd.service &>> $LOG
 CheckTheStatus $?
 
 echo -n "Moving mongoDB service file to default System file location : "

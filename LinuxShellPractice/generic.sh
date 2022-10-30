@@ -40,11 +40,11 @@ fi
 ServiceStart()
 {
     systemctl daemon-reload &>> $LOG
-    echo -n "$1 is enabled : "
+    echo -n "$1 service is enabled : "
     systemctl enable $1 &>> $LOG
     CheckTheStatus $?
 
-    echo -n "$1 is started : "
+    echo -n "$1 service is started : "
     systemctl start $1 &>> $LOG
     CheckTheStatus $?
 }

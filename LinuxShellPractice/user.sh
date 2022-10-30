@@ -41,4 +41,6 @@ echo -n "Moving mongoDB service file to default System file location : "
 mv /home/$APPUSER/$COMPONENT/systemd.service /etc/systemd/system/$COMPONENT.service &>> $LOG
 CheckTheStatus $?
 
-ServiceStart catalogue
+ServiceStart user
+
+systemctl restart nginx

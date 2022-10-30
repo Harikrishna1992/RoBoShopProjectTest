@@ -26,7 +26,7 @@ fi
 
 #remove the the content zip file if exist from Appuser location
 rm -rf /home/$APPUSER/tmp/$COMPONENT.zip &>> $LOG
-rm -rf /home/$APPUSER/tmp/$COMPONENT &>> $LOG
+rm -rf /home/$APPUSER/$COMPONENT &>> $LOG
 cd /home/$APPUSER &>> $LOG
 
 #Download the content

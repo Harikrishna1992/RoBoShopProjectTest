@@ -3,6 +3,7 @@ set -e
 COMPONENT=$1
 if [ -z "$1" ];then
 echo "Please pass argument to $0 for creating webserver \n\t eg. $0 Frontend"
+exit 1
 fi
 AMIID="$(aws ec2 describe-images --filters "Name=name,Values=DevOps-LabImage-CentOS7" | jq '.Images[].ImageId' |sed -e's/"//g')"
 echo $AMIID

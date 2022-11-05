@@ -4,7 +4,7 @@
   hosts: all
   tasks:
    - name: print names 
-      ansible.builtin.debug:
+    ansible.builtin.debug:
         msg: print machine names {{ id }}
 
 - name: creating variable for the asible playbook
@@ -13,5 +13,5 @@
   - name: Print url
   vars:
     URL: gmail.google.com
-     ansible.builtin.debug:
+  ansible.builtin.debug:
       msg: "{{ URL }}"  

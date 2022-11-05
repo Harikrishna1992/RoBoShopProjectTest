@@ -2,7 +2,7 @@
 - name: Create variable
   hosts: all
   vars:
-  Test: Hari
+   Test: Hari
   tasks:
     - name: first variable creation
       ansible.builtin.debug:

@@ -8,4 +8,5 @@
       ansible.builtin.debug:
        msg: Printing {{ Test }} variable
     - name: print only variable
-      msg: "{{ test }}"
+      ansible.builtin.debug:
+       msg: "{{ test }}"

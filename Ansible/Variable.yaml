@@ -3,13 +3,15 @@
 - name: printing the machine name for ansible playbook
   hosts: all
   tasks:
-  ansible.builtin.debug:
-   msg: print machine names {{ id }}
+   - name: print names 
+      ansible.builtin.debug:
+        msg: print machine names {{ id }}
 
 - name: creating variable for the asible playbook
   hosts: all
   tasks:
+  - name: Print url
   vars:
-   URL: gmail.google.com
-  ansible.builtin.debug:
-   msg: "{{ URL }}"  
+    URL: gmail.google.com
+     ansible.builtin.debug:
+      msg: "{{ URL }}"  

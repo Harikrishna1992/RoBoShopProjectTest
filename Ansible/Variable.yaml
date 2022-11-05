@@ -1,10 +1,11 @@
+---
 - name: printing the machine name for ansible playbook
   hosts: all
   tasks:
     - name: print names 
       ansible.builtin.debug:
           msg: print machine names {{ id }}
-
+...
 - name: creating variable for the asible playbook
   hosts: all
   tasks:

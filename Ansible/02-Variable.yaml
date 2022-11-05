@@ -10,5 +10,5 @@
     - name: print only variable
       ansible.builtin.debug:
        msg: "{{ test }}"
-   vars:                            # task-level / local variables 
+      vars:                            # task-level / local variables 
         URL: task.google.com   

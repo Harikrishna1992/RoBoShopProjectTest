@@ -1,14 +1,14 @@
 #Creating Variables
 
 - name: printing the machine name for ansible playbook
-  host: all
+  hosts: all
   tasks:
   ansible.builtin.debug:
    msg: print machine names {{ id }}
 
 - name: creating variable for the asible playbook
-  host: all
-  task:
+  hosts: all
+  tasks:
   vars:
    URL: gmail.google.com
   ansible.builtin.debug:

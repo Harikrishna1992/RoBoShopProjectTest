@@ -1,0 +1,11 @@
+#Creating Variables
+- name: Create variable
+  hosts: all
+  vars:
+  Test: Hari
+  tasks:
+    - name: first variable creation
+      ansible.builtin.debug:
+       msg: Printing {{ Test }} variable
+    - name: print only variable
+      msg: "{{ test }}"

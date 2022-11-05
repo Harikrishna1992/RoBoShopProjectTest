@@ -1,0 +1,32 @@
+- name: This is my first yaml file creation for ansible
+  Fullname: Harikrishna Pamidala
+  Fathername: Sambasivarao
+  Sibilings: 
+    Sister: 
+      - Kalpana
+    Brothers:
+      - Gopi
+      - vamsi
+  Known Languages:
+      - Hindi
+      - Telugu
+      - English
+
+
+
+- name: Print the gateway for each host when defined
+  ansible.builtin.debug:
+    msg: System {{ inventory_hostname }} has gateway {{ ansible_default_ipv4.gateway }}
+
+- name: Defining Variables
+  host: all 
+  Variables:
+    Name: Harikrishna
+    Gender: Male
+    Location:
+      - Pune
+      - Guntur
+    Education:  
+      - B-Tech
+
+

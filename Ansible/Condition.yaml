@@ -5,10 +5,8 @@
    - name: verify the distuboter of linux build
      ansible.builtin.debug:
        msg: print {{ansible_distribution}}
-      when: 
-       - ansible_distribution == "CentOS"
+      when: ansible_distribution == "CentOS"
    - name: verify the distuboter of linux build
      ansible.builtin.debug:
        msg: print {{ansible_distribution}}
-      when: 
-       - ansible_distribution != "CentOS"
+      when:  ansible_distribution != "CentOS"

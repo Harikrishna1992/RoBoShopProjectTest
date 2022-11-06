@@ -1,6 +1,6 @@
 
 - name: working on ignore method
-  hosts: dev
+  hosts: Dev
   tasks:
    - name: using shell to print errors
      ansible.builtin.shell: pf -ef | grep java

@@ -1,0 +1,7 @@
+#Let's Practice on conditional in yaml
+- name: check which distrubote of the machine
+  hosts: Dev
+  tasks:
+   - name: verify the distuboter of linux build
+     ansible.builtin.debug:
+       msg: "print {{ansible_distribution}}"

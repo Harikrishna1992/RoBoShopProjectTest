@@ -5,6 +5,7 @@
    - name: using shell to print errors
      ansible.builtin.shell: pf -ef | grep java
      register: checkerror
+     ignore_errors: yes
    - name: using debug method for Printing
      ansible.builtin.debug:
        msg: "checkerror"

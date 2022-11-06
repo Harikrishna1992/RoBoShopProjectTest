@@ -4,7 +4,7 @@
   tasks:
    - name: using shell to print errors
      ansible.builtin.shell: pf -ef | grep java
-     register1: checkerror
+     register: checkerror
    - name: using debug method for Printing
      ansible.builtin.debug:
        msg: "checkerror"

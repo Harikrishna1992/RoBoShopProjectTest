@@ -1,8 +1,8 @@
 #Creating Variables
 - name: Create variable
   hosts: all
-  vars:
-   Test: Hari
+  vars_files:
+    - Variable-File.yaml
   tasks:
     - name: first variable creation
       ansible.builtin.debug:

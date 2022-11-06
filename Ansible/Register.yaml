@@ -1,15 +1,3 @@
-...
--name: Printing uptime of dev machine
-  hosts: Dev
-  #become: true
-  tasks:
-   - name: using script method for retriving the data
-     ansible.builtin.shell: uptime
-     register: Devmachine
-   - name: using debug method for Printing
-     ansible.builtin.debug:
-       msg: "Devmachine"  
-...
 
 - name: working on ignore method
   hosts: dev

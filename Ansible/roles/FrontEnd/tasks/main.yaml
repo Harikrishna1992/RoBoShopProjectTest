@@ -29,7 +29,7 @@
      cd /usr/share/nginx/html
      mv /frontend-main/* .
      mv /static/* .
-  remote_src: yes
+  
   
 - name: Removing the directory from frontend-main folder
   ansible.builtin.file:

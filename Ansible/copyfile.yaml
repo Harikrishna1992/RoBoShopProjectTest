@@ -1,0 +1,9 @@
+- name: copying file to machines
+  hosts: all
+  become: true
+  tasks:
+   - name: copying file to rdp machies
+     ansible.builtin.copy:
+       src: inventory
+       dest: /tmp
+       

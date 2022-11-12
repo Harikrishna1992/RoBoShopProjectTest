@@ -27,18 +27,17 @@
 - name: moving file
   ansible.builtin.shell:
    - mv /usr/share/nginx/html/frontend-main/* /usr/share/nginx/html
-  remote_src: yes
-
-- name: moving file
-  ansible.builtin.shell:
-    - mv /usr/share/nginx/html/static/* /usr/share/nginx/html
+   - mv /usr/share/nginx/html/static/* /usr/share/nginx/html
   remote_src: yes
   
 - name: Removing the directory from frontend-main folder
   ansible.builtin.file:
      path: /usr/share/nginx/html/frontend-main
      state: absent
-
+- name: copying roboshop config file to remote machine
+  ansible.builtin.unarchive:
+    src: roboshop.conf
+    dest: /etc/nginx/default.d
 
 - name: restarting the nginx package
   ansible.builtin.package:

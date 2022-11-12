@@ -25,9 +25,10 @@
     remote_src: yes
 
 - name: moving file
-  ansible.builtin.shell:
-   - mv /usr/share/nginx/html/frontend-main/* /usr/share/nginx/html
-   - mv /usr/share/nginx/html/static/* /usr/share/nginx/html
+  ansible.builtin.shell: |
+    cd /usr/share/nginx/html
+    mv /frontend-main/* .
+    mv /static/* .
   remote_src: yes
   
 - name: Removing the directory from frontend-main folder

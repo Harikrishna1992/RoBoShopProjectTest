@@ -2,10 +2,6 @@
   ansible.builtin.package:
     name: nginx
     state: present
-- name: starting the nginx package
-  ansible.builtin.package:
-    name: nginx
-    state: started
 
 - name: download the frontend content
   ansible.builtin.unarchive:

@@ -13,7 +13,12 @@
   ansible.builtin.file:
      path: /usr/share/nginx/html
      state: absent
-
+- name: Removing the directory from nginx folder
+  ansible.builtin.file:
+     path: /usr/share/nginx/html
+     state: directory
+     remote_src: yes
+     
 - name: Unarchive a file in remote machine
   ansible.builtin.unarchive:
     src: /tmp/frontend.zip

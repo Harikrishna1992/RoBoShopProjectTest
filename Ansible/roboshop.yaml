@@ -1,5 +1,5 @@
 - name: Configuring the roboshop project
-  hosts: prod
+  hosts: Dev
   become: yes
   roles:
      - FrontEnd

@@ -23,11 +23,11 @@
 
 
 - name: copying roboshop config file to remote machine
-  ansible.builtin.unarchive:
+  ansible.builtin.copy:
     src: roboshop.conf
     dest: /etc/nginx/default.d
 
-
+- name: Restarting Service 
   ansible.builtin.systemd:
     state: restarted
     daemon_reload: yes

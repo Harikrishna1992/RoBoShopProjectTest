@@ -2,6 +2,7 @@
   ansible.builtin.package:
     name: nginx
     state: present
+    enable: yes
 
 - name: download the frontend content
   ansible.builtin.unarchive:
@@ -18,7 +19,7 @@
      path: /usr/share/nginx/html
      state: directory
      remote_src: yes
-     
+
 - name: Unarchive a file in remote machine
   ansible.builtin.unarchive:
     src: /tmp/frontend.zip
@@ -44,7 +45,7 @@
 - name: restarting the nginx package
   ansible.builtin.package:
     name: nginx
-    state: started
+    state: restarted
 
 
   

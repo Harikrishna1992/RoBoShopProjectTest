@@ -19,16 +19,10 @@
      state: directory
   
 
-- name: Unarchive a file in remote machine
-  ansible.builtin.unarchive:
-    src: /tmp/frontend.zip
-    dest: /usr/share/nginx/html
-    remote_src: yes
-
 - name: moving file
   ansible.builtin.shell: |
      cd /usr/share/nginx/html
-     mv /frontend-main/* .
+     mv /tmp/frontend-main/* .
      mv /static/* .
   
   

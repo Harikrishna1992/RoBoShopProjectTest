@@ -2,7 +2,6 @@
   ansible.builtin.package:
     name: nginx
     state: present
-    enable: yes
 
 - name: download the frontend content
   ansible.builtin.unarchive:

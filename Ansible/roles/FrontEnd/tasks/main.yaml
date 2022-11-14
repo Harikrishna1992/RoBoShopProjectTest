@@ -17,7 +17,7 @@
   ansible.builtin.file:
      path: /usr/share/nginx/html
      state: directory
-     remote_src: yes
+  
 
 - name: Unarchive a file in remote machine
   ansible.builtin.unarchive:

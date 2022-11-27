@@ -1,0 +1,25 @@
+- name: configuring the {{COMPONENT}} repo file
+  ansible.builtin.shell: curl --silent https://rpm.nodesource.com/setup_16.0.x | sudo bash
+
+- name: Installing nodejs software
+  ansible.builtin.yum:
+    name:
+      - nodejs 
+      - gcc-c++
+    state: present
+
+- name: Add the user {{USER}}
+  ansible.builtin.user:
+    name: {{ USER }}
+    comment: creating  {{ USER }} for project
+
+- name: download and extract {{COMPONENT}} content
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: download
+
+- name: remove old content before copying
+  ansible.builtin.file:
+   path: /home/{{user}}/{{COMPONENT}}
+   state: absent
+    

@@ -1,0 +1,36 @@
+- name: copying roboshop config file to remote machine
+  ansible.builtin.copy:
+    src: mongodb.repo
+    dest: /etc/yum.repos.d/mongodb.repo
+
+- name: Install the mongodb-org
+  ansible.builtin.yum:
+    name: mongodb-org
+    state: installed
+
+- name: update the config file in mongodb.config
+  ansible.builtin.replace:
+    path: /etc/mongod.conf
+    regexp: '127.0.0.1'
+    replace: '0.0.0.0'
+
+- name: starting mongodb Service 
+  ansible.builtin.service:
+    state: started
+    name: mongod 
+    enabled: yes
+
+- name: download and extract {{COMPONENT}} content
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: download
+
+- name: Run a js file containing MongoDB catalog
+  community.mongodb.mongodb_shell:
+    file: "/tmp/mongodb-main/{{ item }}.js"
+    idempotent: yes
+  loop:
+     - catalogue
+     - users
+
+  
